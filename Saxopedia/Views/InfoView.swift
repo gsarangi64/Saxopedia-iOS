@@ -8,11 +8,42 @@
 import SwiftUI
 
 struct InfoView: View {
+    @EnvironmentObject var repertoireService: SaxRepertoireService
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            Section("App") {
+                HStack {
+                    Text("Name")
+                    Spacer()
+                    Text("Saxopedia")
+                        .foregroundColor(.secondary)
+                }
+                
+                HStack {
+                    Text("Version")
+                    Spacer()
+                    Text("1.0")
+                        .foregroundColor(.secondary)
+                }
+            }
+            
+            Section("Data") {
+                HStack {
+                    Text("Pieces Loaded")
+                    Spacer()
+                    Text("\(repertoireService.pieces.count)")
+                        .foregroundColor(.secondary)
+                }
+            }
+        }
+        .navigationTitle("About")
     }
 }
 
 #Preview {
-    InfoView()
+    NavigationStack {
+        InfoView()
+            .environmentObject(SaxRepertoireService())
+    }
 }
