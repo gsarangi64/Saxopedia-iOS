@@ -7,10 +7,14 @@
 
 import Foundation
 
-struct Composer: Identifiable, Codable {
-    let id: UUID
+struct Composer: Identifiable, Decodable {
+    var id: UUID = UUID()
     let name: String
     let birthYear: Int?
     let deathYear: Int?
     let bio: String?
+    
+    private enum CodingKeys: String, CodingKey {
+        case name, birthYear, deathYear, bio
+    }
 }

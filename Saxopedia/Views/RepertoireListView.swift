@@ -8,11 +8,32 @@
 import SwiftUI
 
 struct RepertoireListView: View {
+    @EnvironmentObject var service: SaxRepertoireService
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            if service.pieces.isEmpty {
+                ProgressView("Loading repertoire…")
+                    .frame(maxWidth: .infinity, alignment: .center)
+            } else {
+                ForEach(service.pieces) { piece in
+                    NavigationLink {
+                        RepertoireDetailView(piece: piece)
+                    } label: {
+                        PieceRowView(piece: piece)
+                    }
+                }
+            }
+        }
+        .navigationTitle("Repertoire")
+        .task {
+            await service.fetchRepertoire()
+        }
     }
 }
 
 #Preview {
+    // Provide a dummy service for preview
     RepertoireListView()
+        .environmentObject(SaxRepertoireService())
 }
