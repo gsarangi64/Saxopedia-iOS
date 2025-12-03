@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct SaxopediaApp: App {
+    @StateObject var repertoireService = SaxRepertoireService()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .environmentObject(repertoireService)
         }
     }
 }
