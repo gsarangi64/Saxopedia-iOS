@@ -8,11 +8,32 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @EnvironmentObject var settings: SettingsModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            Section("Appearance") {
+                Toggle("Dark Mode", isOn: $settings.darkMode)
+            }
+            
+            Section("Content") {
+                Toggle("Show Composer Info", isOn: $settings.showComposerInfo)
+            }
+            
+            Section("Data Sources") {
+                Link("Saxophone Repertoire JSON",
+                     destination: URL(string: "https://github.com/gsarangi64/sax-repertoire-data")!)
+                Link("Open Opus API",
+                     destination: URL(string: "https://api.openopus.org")!)
+            }
+        }
+        .navigationTitle("Settings")
     }
 }
 
 #Preview {
-    SettingsView()
+    NavigationStack {
+        SettingsView()
+            .environmentObject(SettingsModel())
+    }
 }
