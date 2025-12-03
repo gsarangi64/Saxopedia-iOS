@@ -8,32 +8,55 @@
 import SwiftUI
 
 struct RepertoireListView: View {
-    @EnvironmentObject var service: SaxRepertoireService
-
+    @EnvironmentObject var repertoireService: SaxRepertoireService
+    @State private var searchText = ""
+    
+    var filteredPieces: [SaxPiece] {
+        if searchText.isEmpty {
+            return repertoireService.pieces
+        }
+        return repertoireService.pieces.filter { piece in
+            piece.title.localizedCaseInsensitiveContains(searchText) ||
+            piece.composer.localizedCaseInsensitiveContains(searchText)
+        }
+    }
+    
     var body: some View {
-        List {
-            if service.pieces.isEmpty {
-                ProgressView("Loading repertoire…")
-                    .frame(maxWidth: .infinity, alignment: .center)
+        Group {
+            if repertoireService.isLoading {
+                ProgressView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else if repertoireService.pieces.isEmpty {
+                Text("No pieces loaded")
+                    .foregroundColor(.secondary)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
-                ForEach(service.pieces) { piece in
+                List(filteredPieces) { piece in
                     NavigationLink {
                         RepertoireDetailView(piece: piece)
                     } label: {
-                        PieceRowView(piece: piece)
+                        VStack(alignment: .leading) {
+                            Text(piece.title)
+                                .font(.headline)
+                            Text(piece.composer)
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                        }
                     }
                 }
+                .searchable(text: $searchText)
             }
         }
         .navigationTitle("Repertoire")
-        .task {
-            await service.fetchRepertoire()
+        .refreshable {
+            await repertoireService.loadRepertoire()
         }
     }
 }
 
 #Preview {
-    // Provide a dummy service for preview
-    RepertoireListView()
-        .environmentObject(SaxRepertoireService())
+    NavigationStack {
+        RepertoireListView()
+            .environmentObject(SaxRepertoireService())
+    }
 }
