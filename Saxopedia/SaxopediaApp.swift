@@ -17,11 +17,11 @@ struct SaxopediaApp: App {
         WindowGroup {
             NavigationStack {
                 HomeView()
-                    .environmentObject(repertoireService)
-                    .environmentObject(composerService)
-                    .environmentObject(settings)
-                    .preferredColorScheme(settings.darkMode ? .dark : .light)
             }
+            .environmentObject(repertoireService)
+            .environmentObject(composerService)
+            .environmentObject(settings)
+            .preferredColorScheme(settings.darkMode ? .dark : .light)
         }
     }
 }
