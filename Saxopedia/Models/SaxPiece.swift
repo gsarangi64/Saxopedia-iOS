@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct SaxPiece: Identifiable, Decodable {
-    let id = UUID()
+struct SaxPiece: Identifiable, Codable {
+    var id = UUID()
     let title: String
     let composer: String
     let year: Int
