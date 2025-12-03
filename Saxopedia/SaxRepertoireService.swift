@@ -7,20 +7,20 @@
 
 import Foundation
 
+@MainActor
 class SaxRepertoireService: ObservableObject {
     @Published var pieces: [SaxPiece] = []
-
-    let url = URL(string: "https://raw.githubusercontent.com/gsarangi64/sax-repertoire-data/main/sax_repertoire.json")!
+    
+    private let url = URL(string:
+        "https://raw.githubusercontent.com/gsarangi64/sax-repertoire-data/main/sax_repertoire.json"
+    )!
 
     func fetchRepertoire() async {
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
-            let decoded = try JSONDecoder().decode([SaxPiece].self, from: data)
-            DispatchQueue.main.async {
-                self.pieces = decoded
-            }
+            pieces = try JSONDecoder().decode([SaxPiece].self, from: data)
         } catch {
-            print("Error fetching repertoire: \(error)")
+            print("Error fetching repertoire:", error)
         }
     }
 }
