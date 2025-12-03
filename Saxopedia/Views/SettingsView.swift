@@ -22,7 +22,7 @@ struct SettingsView: View {
             
             Section("Data Sources") {
                 Link("Saxophone Repertoire JSON",
-                     destination: URL(string: "https://github.com/gsarangi64/sax-repertoire-data")!)
+                     destination: URL(string: "https://raw.githubusercontent.com/gsarangi64/sax-repertoire-data/main/sax_repertoire.json")!)
                 Link("Open Opus API",
                      destination: URL(string: "https://api.openopus.org")!)
             }
