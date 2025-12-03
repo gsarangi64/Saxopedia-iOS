@@ -7,38 +7,31 @@
 
 import Foundation
 
-@MainActor
 class SaxRepertoireService: ObservableObject {
     @Published var pieces: [SaxPiece] = []
     @Published var isLoading = false
-    @Published var error: String?
     
-    private let jsonURL = "https://raw.githubusercontent.com/gsarangi64/sax-repertoire-data/main/sax_repertoire.json"
+    private let urlString = "https://raw.githubusercontent.com/gsarangi64/sax-repertoire-data/main/sax_repertoire.json"
     
     func loadRepertoire() async {
+        guard let url = URL(string: urlString) else { return }
+        
         isLoading = true
-        error = nil
-        
-        defer { isLoading = false }
-        
-        guard let url = URL(string: jsonURL) else {
-            error = "Invalid URL"
-            return
-        }
         
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
+            let decodedPieces = try JSONDecoder().decode([SaxPiece].self, from: data)
             
-            // Try to decode the JSON
-            let decoder = JSONDecoder()
-            let decodedPieces = try decoder.decode([SaxPiece].self, from: data)
-            
-            // Sort by title
-            pieces = decodedPieces.sorted { $0.title < $1.title }
-            
+            await MainActor.run {
+                self.pieces = decodedPieces.sorted { $0.title < $1.title }
+                self.isLoading = false
+            }
         } catch {
-            self.error = "Failed to load repertoire: \(error.localizedDescription)"
-            pieces = []
+            await MainActor.run {
+                self.isLoading = false
+                print("Error loading repertoire: \(error)")
+            }
         }
     }
 }
+
