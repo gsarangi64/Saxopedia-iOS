@@ -14,8 +14,6 @@ struct OpenOpusResponse: Decodable {
 
 struct Status: Decodable {
     let success: String
-    let source: String?
-    let rows: Int?
 }
 
 struct Composer: Identifiable, Decodable {
@@ -24,10 +22,8 @@ struct Composer: Identifiable, Decodable {
     let complete: String?
     let birth: Int?
     let death: Int?
-    let epoch: String?
-    let portrait: String?
     
     enum CodingKeys: String, CodingKey {
-        case id, name, complete, birth, death, epoch, portrait
+        case id, name, complete, birth, death
     }
 }
