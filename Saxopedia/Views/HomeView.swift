@@ -8,37 +8,36 @@
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var service: SaxRepertoireService
-
+    @EnvironmentObject var repertoireService: SaxRepertoireService
+    
     var body: some View {
-        NavigationStack {
-            VStack {
-                Text("Saxophone Repertoire Explorer")
-                    .font(.title2)
-                    .padding(.top)
-
+        List {
+            Section {
                 NavigationLink("Browse Repertoire") {
                     RepertoireListView()
                 }
-                .padding()
-
+            }
+            
+            Section {
                 NavigationLink("Settings") {
                     SettingsView()
                 }
-                .padding()
-
-                NavigationLink("App Info") {
+                
+                NavigationLink("About") {
                     InfoView()
                 }
-                .padding()
             }
-//            .task {
-//                await service.fetchRepertoire()
-//            }
+        }
+        .navigationTitle("Saxopedia")
+        .task {
+            if repertoireService.pieces.isEmpty {
+                await repertoireService.loadRepertoire()
+            }
         }
     }
 }
 
 #Preview {
     HomeView()
+        .environmentObject(SaxRepertoireService())
 }
