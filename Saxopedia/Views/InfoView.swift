@@ -12,32 +12,90 @@ struct InfoView: View {
     
     var body: some View {
         Form {
-            Section("App") {
+            // App Icon Section
+            Section {
                 HStack {
-                    Text("Name")
                     Spacer()
-                    Text("Saxopedia")
-                        .foregroundColor(.secondary)
-                }
-                
-                HStack {
-                    Text("Version")
+                    VStack(spacing: 12) {
+                        Image("AppIcon")
+                            .resizable()
+                            .frame(width: 100, height: 100)
+                            .cornerRadius(20)
+                            .shadow(radius: 5)
+                            .transition(.scale)
+                        
+                        Text(Bundle.main.appName)
+                            .font(.headline)
+                    }
+                    .padding(.vertical)
                     Spacer()
-                    Text("1.0")
-                        .foregroundColor(.secondary)
                 }
             }
             
-            Section("Data") {
-                HStack {
-                    Text("Pieces Loaded")
-                    Spacer()
-                    Text("\(repertoireService.pieces.count)")
-                        .foregroundColor(.secondary)
-                }
+            // App Info Section
+            Section(String(localized: "App Info")) {
+                InfoRowView(label: String(localized: "Name"), value: Bundle.main.appName)
+                InfoRowView(label: String(localized: "Version"), value: Bundle.main.version)
+                InfoRowView(label: String(localized: "Build"), value: Bundle.main.buildNumber)
+                InfoRowView(label: String(localized: "Copyright"), value: Bundle.main.copyright)
+            }
+            
+            // Data Section
+            Section(String(localized: "Data")) {
+                InfoRowView(
+                    label: String(localized: "Pieces Loaded"),
+                    value: "\(repertoireService.pieces.count)"
+                )
+            }
+            
+            // Credits Section
+            Section(String(localized: "Credits")) {
+                Link("Open Opus API", destination: URL(string: "https://api.openopus.org")!)
+                Link("Saxophone Repertoire Data", destination: URL(string: "https://github.com/gsarangi64/sax-repertoire-data")!)
             }
         }
-        .navigationTitle("About")
+        .navigationTitle(String(localized: "About"))
+    }
+}
+
+struct InfoRowView: View {
+    let label: String
+    let value: String
+    
+    var body: some View {
+        HStack {
+            Text(label)
+            Spacer()
+            Text(value)
+                .foregroundColor(.secondary)
+                .multilineTextAlignment(.trailing)
+        }
+        .padding(.vertical, 4)
+        .transition(.opacity)
+    }
+}
+
+extension Bundle {
+    var displayName: String {
+        return object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ??
+               object(forInfoDictionaryKey: "CFBundleName") as? String ??
+               ""
+    }
+    
+    var appName: String {
+        return object(forInfoDictionaryKey: "CFBundleName") as? String ?? ""
+    }
+    
+    var version: String {
+        return object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
+    }
+    
+    var buildNumber: String {
+        return object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? ""
+    }
+    
+    var copyright: String {
+        return object(forInfoDictionaryKey: "NSHumanReadableCopyright") as? String ?? ""
     }
 }
 
