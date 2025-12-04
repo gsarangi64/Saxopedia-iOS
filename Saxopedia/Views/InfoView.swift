@@ -75,30 +75,6 @@ struct InfoRowView: View {
     }
 }
 
-extension Bundle {
-    var displayName: String {
-        return object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ??
-               object(forInfoDictionaryKey: "CFBundleName") as? String ??
-               ""
-    }
-    
-    var appName: String {
-        return object(forInfoDictionaryKey: "CFBundleName") as? String ?? ""
-    }
-    
-    var version: String {
-        return object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
-    }
-    
-    var buildNumber: String {
-        return object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? ""
-    }
-    
-    var copyright: String {
-        return object(forInfoDictionaryKey: "NSHumanReadableCopyright") as? String ?? ""
-    }
-}
-
 #Preview {
     NavigationStack {
         InfoView()
