@@ -1,0 +1,88 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%lld" : {
+
+    },
+    "%lld - %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld - %2$lld"
+          }
+        }
+      }
+    },
+    "1.0" : {
+
+    },
+    "About" : {
+
+    },
+    "App" : {
+
+    },
+    "Appearance" : {
+
+    },
+    "Browse Repertoire" : {
+
+    },
+    "Composer Information" : {
+
+    },
+    "Composer information not available" : {
+
+    },
+    "Content" : {
+
+    },
+    "Dark Mode" : {
+
+    },
+    "Data" : {
+
+    },
+    "Data Sources" : {
+
+    },
+    "Listen to Recording" : {
+
+    },
+    "Name" : {
+
+    },
+    "No pieces loaded" : {
+
+    },
+    "Notes" : {
+
+    },
+    "Open Opus API" : {
+
+    },
+    "Pieces Loaded" : {
+
+    },
+    "Repertoire" : {
+
+    },
+    "Saxopedia" : {
+
+    },
+    "Saxophone Repertoire JSON" : {
+
+    },
+    "Settings" : {
+
+    },
+    "Show Composer Info" : {
+
+    },
+    "Version" : {
+
+    }
+  },
+  "version" : "1.0"
+}
