@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%lld" : {
-
-    },
     "%lld - %lld" : {
       "localizations" : {
         "en" : {
@@ -14,19 +11,19 @@
         }
       }
     },
-    "1.0" : {
-
-    },
     "About" : {
 
     },
-    "App" : {
+    "App Info" : {
 
     },
     "Appearance" : {
 
     },
     "Browse Repertoire" : {
+
+    },
+    "Build" : {
 
     },
     "Composer Information" : {
@@ -36,6 +33,12 @@
 
     },
     "Content" : {
+
+    },
+    "Copyright" : {
+
+    },
+    "Credits" : {
 
     },
     "Dark Mode" : {
@@ -69,6 +72,9 @@
 
     },
     "Saxopedia" : {
+
+    },
+    "Saxophone Repertoire Data" : {
 
     },
     "Saxophone Repertoire JSON" : {
