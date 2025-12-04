@@ -14,6 +14,15 @@
     "About" : {
 
     },
+    "API Data" : {
+
+    },
+    "API Information" : {
+
+    },
+    "API Statistics" : {
+
+    },
     "App Info" : {
 
     },
@@ -21,6 +30,9 @@
 
     },
     "Auto Refresh" : {
+
+    },
+    "Birth Year" : {
 
     },
     "Browse Repertoire" : {
@@ -41,10 +53,22 @@
     "Cancel" : {
 
     },
+    "Complete" : {
+
+    },
+    "Composer API" : {
+
+    },
     "Composer Information" : {
 
     },
     "Composer information not available" : {
+
+    },
+    "Composer not found. Please try a different name." : {
+
+    },
+    "Composers API" : {
 
     },
     "Content" : {
@@ -65,22 +89,64 @@
     "Data" : {
 
     },
+    "Data Source" : {
+
+    },
     "Data Sources" : {
+
+    },
+    "Death Year" : {
+
+    },
+    "Detailed API Data" : {
+
+    },
+    "Earliest Piece" : {
 
     },
     "Enable Notifications" : {
 
     },
+    "Endpoint" : {
+
+    },
+    "Endpoint: /composer/list/" : {
+
+    },
+    "Enter composer name" : {
+
+    },
+    "Format" : {
+
+    },
     "Hour" : {
+
+    },
+    "Incomplete" : {
+
+    },
+    "Last Updated" : {
 
     },
     "Listen to Recording" : {
 
     },
+    "Load Failed" : {
+
+    },
+    "Loading..." : {
+
+    },
     "Minute" : {
 
     },
+    "Most Recent Piece" : {
+
+    },
     "Name" : {
+
+    },
+    "No data available" : {
 
     },
     "No pieces loaded" : {
@@ -101,6 +167,12 @@
     "Open Opus API" : {
 
     },
+    "Open Opus ID" : {
+
+    },
+    "Pieces" : {
+
+    },
     "Pieces Loaded" : {
 
     },
@@ -113,10 +185,25 @@
     "practice_reminder_title" : {
 
     },
+    "Refresh API Data" : {
+
+    },
     "Reminder Time" : {
 
     },
     "Repertoire" : {
+
+    },
+    "Repertoire API" : {
+
+    },
+    "Retry" : {
+
+    },
+    "Sample Composer" : {
+
+    },
+    "Sample Piece" : {
 
     },
     "Save" : {
@@ -129,6 +216,12 @@
 
     },
     "Saxophone Repertoire JSON" : {
+
+    },
+    "Search for a Composer" : {
+
+    },
+    "Search for a composer to see API data" : {
 
     },
     "Select Time" : {
@@ -146,7 +239,19 @@
     "Sort Order" : {
 
     },
+    "Source: Open Opus API" : {
+
+    },
+    "There was an error loading the repertoire. Please check your connection and try again." : {
+
+    },
+    "Total Pieces" : {
+
+    },
     "Version" : {
+
+    },
+    "Works Catalog" : {
 
     }
   },

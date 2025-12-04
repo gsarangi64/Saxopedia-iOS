@@ -16,7 +16,7 @@ struct Status: Decodable {
     let success: String
 }
 
-struct Composer: Identifiable, Decodable {
+struct Composer: Identifiable, Decodable, Equatable {
     let id: String
     let name: String
     let complete: String?
