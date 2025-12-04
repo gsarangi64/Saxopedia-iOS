@@ -20,10 +20,25 @@
     "Appearance" : {
 
     },
+    "Auto Refresh" : {
+
+    },
     "Browse Repertoire" : {
 
     },
     "Build" : {
+
+    },
+    "By Composer" : {
+
+    },
+    "By Title" : {
+
+    },
+    "By Year" : {
+
+    },
+    "Cancel" : {
 
     },
     "Composer Information" : {
@@ -41,6 +56,9 @@
     "Credits" : {
 
     },
+    "Daily Reminder" : {
+
+    },
     "Dark Mode" : {
 
     },
@@ -50,7 +68,16 @@
     "Data Sources" : {
 
     },
+    "Enable Notifications" : {
+
+    },
+    "Hour" : {
+
+    },
     "Listen to Recording" : {
+
+    },
+    "Minute" : {
 
     },
     "Name" : {
@@ -62,13 +89,37 @@
     "Notes" : {
 
     },
+    "Notifications" : {
+
+    },
+    "Notifications Disabled" : {
+
+    },
+    "OK" : {
+
+    },
     "Open Opus API" : {
 
     },
     "Pieces Loaded" : {
 
     },
+    "Please enable notifications in Settings" : {
+
+    },
+    "practice_reminder_body" : {
+
+    },
+    "practice_reminder_title" : {
+
+    },
+    "Reminder Time" : {
+
+    },
     "Repertoire" : {
+
+    },
+    "Save" : {
 
     },
     "Saxopedia" : {
@@ -80,10 +131,19 @@
     "Saxophone Repertoire JSON" : {
 
     },
+    "Select Time" : {
+
+    },
+    "Send Test Notification" : {
+
+    },
     "Settings" : {
 
     },
     "Show Composer Info" : {
+
+    },
+    "Sort Order" : {
 
     },
     "Version" : {
