@@ -1,26 +1,37 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%lld - %lld" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lld - %2$lld"
-          }
-        }
-      }
+    "%@ has been added to your favorites." : {
+
     },
     "About" : {
+
+    },
+    "Add to Favorites" : {
+
+    },
+    "Added to Favorites" : {
 
     },
     "API Data" : {
 
     },
+    "API Data Points" : {
+
+    },
+    "API Error" : {
+
+    },
     "API Information" : {
 
     },
+    "API Results (%lld found)" : {
+
+    },
     "API Statistics" : {
+
+    },
+    "API Status: Connected (%lld results)" : {
 
     },
     "App Info" : {
@@ -32,7 +43,7 @@
     "Auto Refresh" : {
 
     },
-    "Birth Year" : {
+    "Born" : {
 
     },
     "Browse Repertoire" : {
@@ -53,19 +64,16 @@
     "Cancel" : {
 
     },
-    "Complete" : {
-
-    },
     "Composer API" : {
 
     },
-    "Composer Information" : {
+    "Composer API Data (Open Opus)" : {
 
     },
-    "Composer information not available" : {
+    "Composer data not available in API" : {
 
     },
-    "Composer not found. Please try a different name." : {
+    "Composer name" : {
 
     },
     "Composers API" : {
@@ -95,10 +103,10 @@
     "Data Sources" : {
 
     },
-    "Death Year" : {
+    "Detailed API Data" : {
 
     },
-    "Detailed API Data" : {
+    "Died" : {
 
     },
     "Earliest Piece" : {
@@ -110,10 +118,13 @@
     "Endpoint" : {
 
     },
-    "Endpoint: /composer/list/" : {
+    "Endpoint: /composer/list/search/%@.json" : {
 
     },
-    "Enter composer name" : {
+    "Endpoint: GET https://api.openopus.org/composer/list/search/{name}.json" : {
+
+    },
+    "Enter a composer name and tap search" : {
 
     },
     "Format" : {
@@ -122,7 +133,7 @@
     "Hour" : {
 
     },
-    "Incomplete" : {
+    "ID" : {
 
     },
     "Last Updated" : {
@@ -131,7 +142,19 @@
     "Listen to Recording" : {
 
     },
+    "Live API Connection" : {
+
+    },
+    "Live data fetched from Open Opus API" : {
+
+    },
     "Load Failed" : {
+
+    },
+    "Loading composer data from API..." : {
+
+    },
+    "Loading composer data..." : {
 
     },
     "Loading..." : {
@@ -140,13 +163,16 @@
     "Minute" : {
 
     },
+    "More Options" : {
+
+    },
     "Most Recent Piece" : {
 
     },
     "Name" : {
 
     },
-    "No data available" : {
+    "No composers found" : {
 
     },
     "No pieces loaded" : {
@@ -167,7 +193,7 @@
     "Open Opus API" : {
 
     },
-    "Open Opus ID" : {
+    "Piece Details (from JSON API)" : {
 
     },
     "Pieces" : {
@@ -197,7 +223,13 @@
     "Repertoire API" : {
 
     },
+    "Report Issue" : {
+
+    },
     "Retry" : {
+
+    },
+    "Returns: Array of composer objects with detailed information" : {
 
     },
     "Sample Composer" : {
@@ -218,10 +250,16 @@
     "Saxophone Repertoire JSON" : {
 
     },
-    "Search for a Composer" : {
+    "Search Composers" : {
 
     },
-    "Search for a composer to see API data" : {
+    "Search for a composer" : {
+
+    },
+    "Searching Open Opus API..." : {
+
+    },
+    "Select Composer" : {
 
     },
     "Select Time" : {
@@ -233,13 +271,16 @@
     "Settings" : {
 
     },
+    "Share" : {
+
+    },
     "Show Composer Info" : {
 
     },
     "Sort Order" : {
 
     },
-    "Source: Open Opus API" : {
+    "The composer '%@' was not found in the Open Opus database" : {
 
     },
     "There was an error loading the repertoire. Please check your connection and try again." : {
@@ -248,10 +289,13 @@
     "Total Pieces" : {
 
     },
+    "Try: Bach, Beethoven, Mozart, Debussy, Creston" : {
+
+    },
     "Version" : {
 
     },
-    "Works Catalog" : {
+    "View Similar Pieces" : {
 
     }
   },
