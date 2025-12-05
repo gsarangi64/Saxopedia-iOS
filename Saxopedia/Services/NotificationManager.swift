@@ -32,8 +32,8 @@ class NotificationManager: ObservableObject {
         center.removePendingNotificationRequests(withIdentifiers: ["practiceReminder"])
         
         let content = UNMutableNotificationContent()
-        content.title = String(localized: "practice_reminder_title")
-        content.body = String(localized: "practice_reminder_body")
+        content.title = String(localized: "Practice!!")
+        content.body = String(localized: "It's time to practice!")
         content.sound = .default
         
         var dateComponents = DateComponents()
@@ -69,8 +69,8 @@ class NotificationManager: ObservableObject {
     
     func sendTestNotification() {
         let content = UNMutableNotificationContent()
-        content.title = String(localized: "practice_reminder_title")
-        content.body = String(localized: "practice_reminder_body")
+        content.title = String(localized: "Practice!!")
+        content.body = String(localized: "It's time to practice!")
         content.sound = .default
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
